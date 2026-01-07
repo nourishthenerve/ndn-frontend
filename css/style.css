@@ -20,14 +20,46 @@ text-transform: uppercase;
 .navbar-default .navbar-nav>li>a:hover{
 	color: #f74d65;
 }
-header{
+/* header{
 	background: url(../images/header_bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
+	height: 800%;
 }
 .section_overlay{
-	background: rgba(250,250,250, .5);
+	background: rgba(250,250,250, 0);
+} */
+
+header {
+    background-image: url("../images/header_bg.png");
+    background-size: cover;          /* maintain aspect ratio */
+    background-position: center;     /* center crop */
+    background-repeat: no-repeat;
+
+    /* Fallback first, modern browsers override */
+    min-height: 70vh;
+    min-height: 70svh;
 }
+
+/* Overlay matches header exactly */
+.section_overlay {
+    background: rgba(250, 250, 250, 0);
+
+    min-height: 70vh;
+    min-height: 70svh;
+}
+
+/* Larger screens (desktop / large laptops) */
+@media (min-width: 992px) {
+    header,
+    .section_overlay {
+        min-height: 100vh;
+        min-height: 100svh; /* safe viewport height */
+    }
+}
+
+
+
 .home_text{
 	padding-top: 210px;
 	padding-bottom: 210px;
@@ -68,7 +100,7 @@ header{
 }
 .single_service i{
 	font-size: 25px;
-	color: #f73b56;
+	color: #f74d65;
 }
 .single_service h2{
 	color: #000000;
@@ -127,7 +159,7 @@ background-color: #2d3334;
 	position: absolute;
 	width: 80px;
 	height: 80px;
-	background-color: #f73b56;
+	background-color: #aaa7f4;
 	top: 110px;
 	left: 50%;
 	-moz-transform: rotate(45deg);
@@ -167,7 +199,7 @@ padding-top: 110px;
 
 /*Fun Facts*/
 .fun_facts{
-	background: url(../images/header_bg.jpg);
+	background: url(../images/header_bg.png);
 	background-attachment: fixed !important;
 	background-repeat: repeat;
 	
@@ -180,7 +212,7 @@ padding-bottom: 30px;
 padding-top: 120px;	
 }
 .single_count i{
-	color: #f73b56;
+	color: #f74d65;
 	font-size: 24px;
 }
 .single_count h3{
@@ -236,7 +268,7 @@ margin-top: -40px;
 position: absolute;
 width: 100%;
 height: 100%;
-background: rgba(247,77,101,.9);
+background: rgba(170, 167, 244,.9);
 left: 0;
 top: 0;
 opacity: 0;
@@ -366,7 +398,7 @@ border: 0px solid #fff;
 }
 .form_submit{
 width: 100%;
-background: #f73b56;
+background: #aaa7f4;
 border-radius: 0px;
 color: #fff;
 padding-top: 13px;
